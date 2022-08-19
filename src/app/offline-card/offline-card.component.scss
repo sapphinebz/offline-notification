@@ -1,0 +1,49 @@
+// .offline-card {
+//     background-color: #1976d2;
+//     border-radius: 4px;
+//     border: none;
+//     color: white;
+//     padding: 16px;
+//     width: fit-content;
+//     position: fixed;
+//     bottom: 0.5em;
+//     left:0.5em;
+// }
+
+:host {
+  background-color: #1976d2;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 16px;
+  width: fit-content;
+  position: fixed;
+  bottom: 0.5em;
+  left: 0.5em;
+}
+
+:host.offline {
+  animation: fadeIn 400ms ease-in forwards;
+}
+
+:host.online {
+  animation: fadeOut 400ms ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
